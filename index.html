@@ -26,28 +26,31 @@
         <form class="d-flex flex-column" style="width: 100%;">
             <label class="mt-4 text-secondary position-relative" for="annual-income">
                 <p class="fw-medium">Enter gross annual income <i class="fa fa-question-circle-o" aria-hidden="true" data-bs-toggle="tooltip" data-bs-title="Gross annual income is your total salary in a year before any deductions" data-bs-placement="right"></i></p>
-                <input type="text" id="annual-income" placeholder="Enter gross annual income" required style="width: 100%;"/>
-                <i class="fa fa-exclamation-circle float-end position-absolute" aria-hidden="true" style="top: 47px; right: 8px;"></i>
+                <input class="p-1" type="text" id="annual-income" placeholder="Enter gross annual income" required style="width: 100%;"/>
+                <span id="errorTooltip1" data-bs-toggle="tooltip" data-bs-title="Please enter numbers only" data-bs-placement="right"></span>
             </label>
-            <label class="mt-4 text-secondary" for="extra-income">
+            <label class="mt-4 text-secondary position-relative" for="extra-income">
                 <p class="fw-medium">Enter extra income <i class="fa fa-question-circle-o" aria-hidden="true" data-bs-toggle="tooltip" data-bs-title="Extra income is apart from gross annual income" data-bs-placement="right"></i></p>
-                <input type="text" id="extra-income" placeholder="Enter extra income from other source" style="width: 100%;"/>
+                <input class="p-1" type="text" id="extra-income" placeholder="Enter extra income from other source" style="width: 100%;"/>
+                <span id="errorTooltip2" data-bs-toggle="tooltip" data-bs-title="Please enter numbers only" data-bs-placement="right"></span>
             </label>
-            <label class="mt-4 text-secondary" for="age" for="age">
+            <label class="mt-4 text-secondary position-relative" for="age" for="age">
                 <p class="fw-medium">Enter age group <i class="fa fa-question-circle-o" aria-hidden="true" data-bs-toggle="tooltip" data-bs-title="Less than 40: 30% tax, 40 to 60: 40% tax, and Above 60: 10% tax" data-bs-placement="right"></i></p>
-                <select name="age" id="age" style="width: 100%;">
+                <select class="p-1" name="age" id="age" style="width: 100%;">
                     <option value="">---select---</option>
                     <option value="30">Less than 40 years</option>
                     <option value="40">40 to 60 years</option>
                     <option value="10">Above 60 years</option>
                 </select>
+                <span id="ageTooltip" data-bs-toggle="tooltip" data-bs-title="This input field is mandatory"></span>
             </label>
-            <label class="mt-4 text-secondary" for="deductions">
+            <label class="mt-4 text-secondary position-relative" for="deductions">
                 <p class="fw-medium">Enter total applicable deductions <i class="fa fa-question-circle-o" aria-hidden="true" data-bs-toggle="tooltip" data-bs-title="Enter all your applicable dedcutions here" data-bs-placement="right"></i></p>
-                <input type="text" id="deductions" placeholder="Add total applicable deductions" style="width: 100%;"/>
+                <input class="p-1" type="text" id="deductions" placeholder="Add total applicable deductions" style="width: 100%;"/>
+                <span id="errorTooltip3" data-bs-toggle="tooltip" data-bs-title="Please enter numbers only" data-bs-placement="right"></span>
             </label>
             <div class="mt-5 mb-2" data-bs-toggle="modal" data-bs-target="#modal1" id="submit">
-                <input class="btn btn-success" type="submit" value="Submit" style="width: 100%;"/>
+                <input class="btn btn-success fw-medium" type="submit" value="Submit" style="width: 100%;"/>
             </div>
         </form>
     </div>
@@ -61,7 +64,7 @@
                         <h3 class="mb-4">Your overall income will be</h3>
                         <h4 class="fs-5" id="final-income"></h4>
                         <p>after tax deductions</p>
-                        <button class="btn btn-danger mt-2" data-bs-dismiss="modal" type="button" style="width: 100%;">Close</button>
+                        <button class="btn btn-danger mt-2 fw-medium" data-bs-dismiss="modal" type="button" style="width: 100%;">Close</button>
                     </div>
                 </div>
             </div>
