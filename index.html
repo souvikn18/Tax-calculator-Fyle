@@ -27,12 +27,13 @@
             <label class="mt-4 text-secondary position-relative" for="annual-income">
                 <p class="fw-medium">Enter gross annual income <i class="fa fa-question-circle-o" aria-hidden="true" data-bs-toggle="tooltip" data-bs-title="Gross annual income is your total salary in a year before any deductions"></i></p>
                 <input class="p-1" type="text" id="annual-income" placeholder="Enter gross annual income" required style="width: 100%;"/>
-                <span id="errorTooltip1" data-bs-toggle="tooltip" data-bs-title="Please enter numbers only"></span>
+                <span class="hidden" id="errorTooltip1" data-bs-toggle="tooltip" data-bs-title="Please enter numbers only"><i class="fa fa-exclamation-circle float-end position-absolute error" aria-hidden="true"></i></span>
+                <span class="hidden" id="errorTooltip11" data-bs-toggle="tooltip" data-bs-title="This input field is mandatory" data-bs-placement="right"><i class="fa fa-exclamation-circle float-end position-absolute error" aria-hidden="true"></i></span>
             </label>
             <label class="mt-4 text-secondary position-relative" for="extra-income">
                 <p class="fw-medium">Enter extra income <i class="fa fa-question-circle-o" aria-hidden="true" data-bs-toggle="tooltip" data-bs-title="Extra income is apart from gross annual income" ></i></p>
                 <input class="p-1" type="text" id="extra-income" placeholder="Enter extra income from other source" style="width: 100%;"/>
-                <span id="errorTooltip2" data-bs-toggle="tooltip" data-bs-title="Please enter numbers only"></span>
+                <span class="hidden" id="errorTooltip2" data-bs-toggle="tooltip" data-bs-title="Please enter numbers only"><i class="fa fa-exclamation-circle float-end  position-absolute error" aria-hidden="true"></i></span>
             </label>
             <label class="mt-4 text-secondary position-relative" for="age" for="age">
                 <p class="fw-medium">Enter age group <i class="fa fa-question-circle-o" aria-hidden="true" data-bs-toggle="tooltip" data-bs-title="Less than 40: 30% tax, 40 to 60: 40% tax, and Above 60: 10% tax" ></i></p>
@@ -42,31 +43,27 @@
                     <option value="40">40 to 60 years</option>
                     <option value="10">Above 60 years</option>
                 </select>
-                <span id="ageTooltip" data-bs-toggle="tooltip" data-bs-title="This input field is mandatory"></span>
+                <span class="hidden" id="ageTooltip" data-bs-toggle="tooltip" data-bs-title="This input field is mandatory"><i class="fa fa-exclamation-circle float-end position-absolute error2" aria-hidden="true"></i></span>
             </label>
             <label class="mt-4 text-secondary position-relative" for="deductions">
                 <p class="fw-medium">Enter total applicable deductions <i class="fa fa-question-circle-o" aria-hidden="true" data-bs-toggle="tooltip" data-bs-title="Enter all your applicable dedcutions here"></i></p>
                 <input class="p-1" type="text" id="deductions" placeholder="Add total applicable deductions" style="width: 100%;"/>
-                <span id="errorTooltip3" data-bs-toggle="tooltip" data-bs-title="Please enter numbers only"></span>
+                <span class="hidden" id="errorTooltip3" data-bs-toggle="tooltip" data-bs-title="Please enter numbers only"><i class="fa fa-exclamation-circle float-end position-absolute error" aria-hidden="true"></i></span>
             </label>
-            <div class="mt-5 mb-2" data-bs-toggle="modal" data-bs-target="#modal1" id="submit">
+            <div class="mt-5 mb-2" id="submit">
                 <input class="btn btn-success fw-medium" type="submit" value="Submit" style="width: 100%;"/>
             </div>
         </form>
     </div>
 
     <!-- Modal -->
-    <div class="text-center modal fade" id="modal1" tabindex="-1" aria-labelledby="modal1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-md">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <div class="container py-4">
-                        <h3 class="mb-4">Your overall income will be</h3>
-                        <h4 class="fs-5" id="final-income"></h4>
-                        <p>after tax deductions</p>
-                        <button class="btn btn-danger mt-2 fw-medium" data-bs-dismiss="modal" type="button" style="width: 100%;">Close</button>
-                    </div>
-                </div>
+    <div class="modal-custom hidden">
+        <div class="modal-custom-body text-center">
+            <div class="container py-4">
+                <h3 class="mb-4">Your overall income will be</h3>
+                <h4 class="fs-5" id="final-income">0.00</h4>
+                <p>after tax deductions</p>
+                <button id="close-modal" class="btn btn-danger mt-2 fw-medium" type="button" style="width: 100%">Close</button>
             </div>
         </div>
     </div>
